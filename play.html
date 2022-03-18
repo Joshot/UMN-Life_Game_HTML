@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="icons/umnlifelogo.png">
+    <title>Play</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        
+        body{
+            background-image: url('images/playBackground.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        #navbar{
+            background-color: white;
+        }
+        #navbar a{
+            color: black;
+        }
+        #navbar a span{
+            font-weight: bold;
+        }
+        #inputUserSection{
+            background-color: white;
+            margin: 60px auto;
+            width: 700px;
+            padding: 40px;
+            border: 1px solid rgb(196, 196, 196);
+            border-radius: 12px;
+        }
+        #chooseAvatar button{
+            height: 30%;
+            margin-top: 60px;
+        }
+        #leftClick{
+            color: white;
+            background-color: #003D73;
+        }
+        #rightClick{
+            color: white;
+            background-color: #003D73;
+        }
+        #img{
+            margin: 0 20px;
+        }
+        #img img{
+            border: 1px solid rgb(196, 196, 196);
+            height: 160px;
+        }
+        #inputNameSection{
+            margin-top: 40px;
+            
+        }
+        #playButton{
+            color: white;
+            background-color: #003D73;
+        }
+        #backButton{
+            border: 1px solid rgb(197, 197, 197);
+        }
+        #backButton a{
+            text-decoration: none;
+            color: black;
+        }
+        #footerBottom{
+            background-color: #003D73;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="mainMenu.html"><span>UMN</span>Life</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="inputUserSection">
+            <h3 class="mb-5">Choose Your Avatar!</h3>
+            <div id="chooseAvatar" class="d-flex flex-wrap justify-content-center">
+                <button id="leftClick" type="button" class="btn rounded-pill"><</button>
+                <div id="img">
+                    <img id="userAvatar" class="rounded-circle" src="images/userDefaultMan.png" alt="theAvatar">
+                </div>
+                <button id="rightClick" type="button" class="btn rounded-pill">></button>
+            </div>
+            <div id="inputNameSection">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-pill" id="inputName" name="name" placeholder="ErikGanteng">
+                    <label for="floatingInput" class="ms-2">Name</label>
+                </div>
+                <select id="major" class="form-select rounded-pill" aria-label="Select">
+                    <option selected>Choose Major</option>
+                    <option value="1">Informatics</option>
+                    <option value="2">Information System</option>
+                    <option value="3">Engineering Physics</option>
+                    <option value="4">Electrical Engineering</option>
+                    <option value="5">Computer Engineering</option>
+                    <option value="6">Communication Science</option>
+                    <option value="7">Digital Journalism</option>
+                    <option value="8">Management</option>
+                    <option value="9">Accounting</option>
+                    <option value="10">Visual Communication Design</option>
+                    <option value="11">Film & Animation</option>
+                    <option value="12">Architecture</option>
+                    <option value="13">Department of Hotel Operations</option>
+                </select>
+                <div class="alert alert-warning mt-4" role="alert">
+                    Make sure you have read <span style="font-weight: bold;">How to Play?</span> completely before playing!
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto mt-4">
+                    <button id="playButton" class="btn rounded-pill" type="button">Play</button>
+                    <button onclick="backButton()" id="backButton" class="btn btn-light rounded-pill mt-2" type="button">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <footer id="footerBottom" class="d-flex flex-wrap justify-content-center align-items-center py-3 fixed-bottom">
+            <div>
+              <span class="text-light">© Wkwkwk Group 2022</span>
+            </div>
+        </footer>
+    </div>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    function backButton(){
+        window.location.href = 'mainMenu.html';
+    }
+
+    $('document').ready(function(){
+        let avatar = $('#userAvatar');
+        let leftClick = $('#leftClick');
+        let rightClick = $('#rightClick');
+        let userName = $('#inputName');
+        let play = $('#playButton');
+        let major = $('#major');
+
+        let parent = $('#hasilUser');
+
+        rightClick.click(function(){
+            if(avatar.attr('src') == 'images/userDefaultMan.png'){
+                avatar.attr('src', 'images/userDefaultWoman.png')
+            }
+            else if(avatar.attr('src') == 'images/userDefaultWoman.png'){
+                avatar.attr('src', 'images/user3.png');
+            }
+            else if(avatar.attr('src') == 'images/user3.png'){
+                avatar.attr('src', 'images/user4.png');
+            }
+            else if(avatar.attr('src') == 'images/user4.png'){
+                avatar.attr('src', 'images/user5.png');
+            }
+            else if(avatar.attr('src') == 'images/user5.png'){
+                avatar.attr('src', 'images/user6.png');
+            }
+            else if(avatar.attr('src') == 'images/user6.png'){
+                avatar.attr('src', 'images/user7.png');
+            }
+            else{
+                avatar.attr('src', 'images/userDefaultMan.png');
+            }
+            
+        });
+
+        leftClick.click(function(){
+            if(avatar.attr('src') == 'images/userDefaultMan.png'){
+                avatar.attr('src', 'images/user7.png')
+            }
+            else if(avatar.attr('src') == 'images/user7.png'){
+                avatar.attr('src', 'images/user6.png');
+            }
+            else if(avatar.attr('src') == 'images/user6.png'){
+                avatar.attr('src', 'images/user5.png');
+            }
+            else if(avatar.attr('src') == 'images/user5.png'){
+                avatar.attr('src', 'images/user4.png');
+            }
+            else if(avatar.attr('src') == 'images/user4.png'){
+                avatar.attr('src', 'images/user3.png');
+            }
+            else if(avatar.attr('src') == 'images/user3.png'){
+                avatar.attr('src', 'images/userDefaultWoman.png');
+            }
+            else{
+                avatar.attr('src', 'images/userDefaultMan.png');
+            }
+        });
+
+        play.click(function(){
+            let resultName = userName.val();
+            let resultFullName = userName.val();
+            let resultAvatar = avatar.attr('src');
+            let resultMajor = major.find(":selected").text();
+            if(resultName == false || resultMajor == 'Choose Major'){
+                alert('Please input your name and your major!');
+            }
+            else{
+                localStorage.setItem('theName', resultName.split(" ", 1));
+                localStorage.setItem('theFullName', resultFullName);
+                localStorage.setItem('theAvatar', resultAvatar);
+                localStorage.setItem('theMajor', resultMajor);
+                document.location.href = 'theGame.html';
+            }
+        });
+
+        userName.keypress(function(e){
+            if(e.key == 'Enter'){
+                let resultName = userName.val();
+                let resultFullName = userName.val();
+                let resultAvatar = avatar.attr('src');
+                let resultMajor = major.find(":selected").text();
+                if(resultName == false || resultMajor == 'Choose Major'){
+                    alert('Please input your name and your major!');
+                }
+                else{
+                    localStorage.setItem('theName', resultName.split(" ", 1));
+                    localStorage.setItem('theFullName', resultFullName);
+                    localStorage.setItem('theAvatar', resultAvatar);
+                    localStorage.setItem('theMajor', resultMajor);
+                    document.location.href = 'theGame.html';
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

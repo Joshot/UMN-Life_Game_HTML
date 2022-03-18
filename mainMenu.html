@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="icons/umnlifelogo.png">
+    <title>Main Menu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url("images/backgroundWebsite.png");
+            padding-top: 46px;
+            font-family: 'Poppins', sans-serif;
+        }
+        #navbar{
+            background-color: white;
+        }
+        #navbar a{
+            color: black;
+        }
+        #navbar a span{
+            font-weight: bold;
+        }
+        #buttonNavbar{
+            color: white;
+            margin-left: 30px;
+            width: 126px;
+            background-color: #003D73;
+        }
+        #headerSection{
+            margin-top: 80px;
+            background-image: url("images/headerBackground.png");
+            background-size: cover;
+            padding: 88px;
+            text-align: center;
+            border: 1px solid rgb(196, 196, 196);
+            border-radius: 12px;
+        }
+        #title h1{
+            color: white;
+            font-weight: bold;
+            font-size: 71px;
+        }
+        #title h1 span{
+            font-weight: 500;
+        }
+        #subtitle p{
+            color: white;
+            font-size: 21px;
+        }
+        #buttonHeader{
+            background-color: white;
+            font-size: 18px;
+            border: 1px solid gray;
+            width: 248px;
+        }
+        #firstSection{
+            margin-top: 100px;
+        }
+        #firstSelectionTitle h1{
+            font-weight: bold;
+            font-size: 48px;
+        }
+        #firstSelectionTitle h1 span{
+            font-weight: 500;
+        }
+        #subFirst p{
+            font-size: 22px;
+        }
+        #left{
+            padding: 130px 55px;
+        }
+        #secondSection{
+            margin-top: 100px;
+        }
+        #secondSelectionTitle h1{
+            font-weight: bold;
+            font-size: 48px;
+        }
+        #subSecond p{
+            font-size: 18px;
+        }
+        #theRight{
+            padding: 30px 55px;
+        }
+        #credits{
+            margin-top: 100px;
+            background-image: url("images/creditsBackground.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 12px;
+            padding: 50px 87px;
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        #judul h1{
+            font-size: 37px;
+            font-weight: 500;
+            color: white;
+        }
+        #peopleList{
+            margin-top: 50px;
+        }
+        .square{
+            margin: 10px;
+            padding: 30px 70px;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .square h3{
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .square p{
+            font-size: 16px;
+            color: rgb(102, 102, 102);
+        }
+        #footerBottom{
+            background-color: #003D73;
+        }
+        .badge{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top border-bottom">
+        <div class="container-fluid">
+            <a id="scrollUp" class="navbar-brand" href="#"><span>UMN</span>Life</a>
+            <div class="navbar">
+              <a id="scrollUp" class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="#firstSection">About</a>
+              <a class="nav-link" href="#secondSection">How to Play</a>
+              <a class="nav-link" href="#credits">Credits</a>
+              <button onclick="buttonClick()" id="buttonNavbar" type="button" class="btn rounded-pill">Enter</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="headerSection">
+            <div id="title">
+                <h1>Welcome to UMN<span>Life</span>!</h1>
+            </div>
+            <div id="subtitle">
+                <p>It's all about UMN student simulation</p>
+            </div>
+            <button onclick="buttonClick()" id="buttonHeader" type="button" class="btn rounded-pill mt-5">Enter</button>
+        </div>
+        <div id="firstSection" class="d-flex">
+            <div id="left">
+                <div id="firstSelectionTitle">
+                     <h1>What is UMN<span>Life</span>?</h1>
+                </div>
+                <div id="subFirst" class="mt-4">
+                    <p>It is a simulation that is specially designed to resemble the life of UMN students. You will experience the daily struggles that UMN students face until graduation.</p>
+                </div>
+            </div>
+            <div id="right">
+                <img class="h-md-25" src="images/sectionOne.png" alt="sectionOne">
+            </div>
+        </div>
+        <div id="secondSection" class="d-flex">
+            <div id="theLeft">
+                <img src="images/sectionTwo.png" alt="sectionTwo">
+            </div>
+            <div id="theRight">
+                <div id="secondSelectionTitle">
+                    <h1>How to Play?<span class="badge bg-danger ms-4 text-center">Important!</span></h1>
+                </div>
+                <div id="subSecond" class="mt-4">
+                    <p>
+                        The current status of your character is shown by each bar. Overtime, the bar will get lower. To increase it click the button next to the bar. Each bar also affects other bars (as seen by the yellow bar), so make sure it's balanced. <span style="font-weight: bold;">There's a time jump when you increase activities.</span> You will earn money every minute (in game time) and<b> certain action requires money</b>. Use your money wisely or else you will be bankrupt! In this simulation, <b>you can choose</b> to have a partner but beware having a partner is not always a good choice in college life.You also have to keep studying, otherwise you will get dropped out. The simulation will end if your character is ravenous, is sleep deprived, go broke, or is stressed out. To finish the simulation, you have to keep studying until you pass semester 8, just like in real life.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr class="mt-5 mb-5">
+        <div id="credits">
+            <div id="judul">
+                <h1>Credits</h1>
+            </div>
+            <div id="peopleList" class="d-flex justify-content-center">
+                <div class="square">
+                    <div id="peopleImg">
+                        <img src="images/aldrik.png" alt="">
+                    </div>
+                    <h3>Aldrik Ciaputra</h3>
+                    <p>00000055871</p>
+                </div>
+                <div class="square">
+                    <div id="peopleImg">
+                        <img src="images/joshua.png" alt="">
+                    </div>
+                    <h3>Joshua Hotama</h3>
+                    <p>00000056899</p>
+                </div>
+                <div class="square">
+                    <div id="peopleImg">
+                        <img style="border: 1px solid rgb(207, 207, 207);" class="rounded-circle" src="images/farion.png" alt="">
+                    </div>
+                    <h3>Farion<br>Tekkry</h3>
+                    <p>00000056034</p>
+                </div>
+                <div class="square">
+                    <div id="peopleImg">
+                        <img src="images/daffa.png" alt="">
+                    </div>
+                    <h3>Daffa<br>Akbari</h3>
+                    <p>00000055736</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <footer id="footerBottom" class="d-flex flex-wrap justify-content-center align-items-center py-3">
+            <div>
+              <span class="text-light">© Wkwkwk Group 2022</span>
+            </div>
+        </footer>
+    </div>
+<script>
+    let scrollUp = document.querySelector('#scrollUp');
+
+    scrollUp.click(function(){
+        document.scrollTop = 0;
+    });
+
+    function buttonClick(){
+        window.location.href = 'play.html';
+    }
+
+
+</script>
+</body>
+</html>

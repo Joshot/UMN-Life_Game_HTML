@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="icons/umnlifelogo.png">
+    <title>The Game</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+        body{
+            padding-bottom: 150px;
+            padding-top: 46px;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #navbar{
+            background-color: white;
+        }
+        #navbar a{
+            color: black;
+        }
+        #navbar a span{
+            font-weight: bold;
+        }
+        #header{
+            margin-top: 120px;
+            height: 327px;
+            text-align: left;
+        }
+        #greeting h1{
+            text-align: center;
+            font-size: 80px;
+            font-weight: bold;
+        }
+        #greetingQuotes{
+            margin-top: 10px;
+        }
+        #greetingQuotes h5{
+            text-align: center;
+            font-weight: normal;
+            font-size: 22px;
+            width: 600px;
+            margin: 0 auto;
+        }
+        #time{
+            text-align: center;
+            margin-top: 59px;
+        }
+        #time h3{
+            text-align: center;
+            font-size: 60px;
+            font-weight: normal;
+        }
+        #aboveMiddle{
+            margin-top: 40px;
+        }
+        #userActivity{
+            font-size: 24px;
+            font-weight: 500;
+        }
+        #middleSection{
+            margin-top: 20px;
+        }
+        #progressBarSection{
+            background-color: white;
+            width: 425px;
+            padding: 17px 20px;
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            transition: transform .2s, box-shadow .5s;
+        }
+        #progressBarSection:hover{
+            transform: scale(1.01);
+            box-shadow: 0 0 20px rgba(151, 151, 151, 0.5);
+        }
+        .icon img{
+            width: 40px;
+        }
+        .theButton button{
+            width: 45px;
+            height: 35px;
+            font-size: 16px;
+        }
+        .progress{
+            margin: auto 20px;
+            width: 250px;
+            height: 25px;
+        }
+        #play{
+            margin-top: 12px;
+        }
+        #romance{
+            margin-top: 12px;
+        }
+        #progressRomance{
+            background-color: rgb(255, 102, 128);
+        }
+        #sleep{
+            margin-top: 12px;
+        }
+        #study{
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        #profileSection{
+            background-color: white;
+            padding: 20px;
+            width: 396px;
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            transition: transform .2s, box-shadow .5s;
+        }
+        #profileSection:hover{
+            transform: scale(1.01);
+            box-shadow: 0 0 20px rgba(151, 151, 151, 0.5);
+        }
+        #profileSection img{
+            border: 1px solid #CFCFCF;
+            background-color: black;
+            width: 120px;
+        }
+        #text{
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #statusSection{
+            background-color: white;
+            width: 425px;
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform .2s, box-shadow .5s;
+        }
+        #statusSection:hover{
+            transform: scale(1.01);
+            box-shadow: 0 0 20px rgba(151, 151, 151, 0.5);
+        }
+        #fullName{
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        #fullName p{
+            margin: auto;
+        }
+        #relationship{
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        #relationship p{
+            margin: auto;
+        }
+        #major{
+            border: 1px solid #CFCFCF;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        #major p{
+            margin: auto;
+        }
+        #semester{
+            border-radius: 8px;
+            border: 1px solid #CFCFCF;
+            margin-bottom: 10px;
+        }
+        #semesterBar{
+            width: 60%;
+            height: 12px;
+        }
+        #semester p{
+            margin: auto;
+        }
+        #condition{
+            border-radius: 8px;
+            border: 1px solid #CFCFCF;
+            margin-bottom: 10px;
+        }
+        #condition p{
+            margin: auto;
+        }
+        #footerBottom{
+            background-color: white;
+        }
+        #money{
+            border-radius: 8px;
+            border: 1px solid #CFCFCF;
+        }
+        #money p{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body id="theBody" style="background-image: url('images/backgroundSunrises.png');">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top border-bottom opacity-25">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="mainMenu.html"><span>UMN</span>Life</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div id="header">
+            <div id="greeting">
+            </div>
+            <div id="greetingQuotes">
+            </div>
+            <div id="time" class="d-flex justify-content-center">
+                <h3 id="menit"></h3><h3 id="detik"></h3>
+            </div>
+        </div>
+        <div id="middleSection" class="d-lg-flex justify-content-lg-center justify-content-md-between d-md-inline-block">
+            <div id="progressBarSection" class="mx-2">
+                <div id="title">
+                    <h4 style="font-weight: bold;">Activity</h4>
+                </div>
+                <div id="eat" class="d-flex mt-4">
+                    <div class="icon">
+                        <img src="icons/eat.png" alt="eat">
+                    </div>
+                    <div id="parentEat" class="progress rounded-pill my-auto">
+                        <!-- <div id="progressEat" class="progress-bar rounded-pill" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    </div>
+                    <div class="theButton my-auto">
+                        <button id="buttonEat" type="button" class="btn btn-primary rounded-pill">+</button>
+                    </div>
+                </div>
+                <div id="play" class="d-flex">
+                    <div class="icon">
+                        <img src="icons/gaming.png" alt="play">
+                    </div>
+                    <div id="parentPlay" class="progress rounded-pill my-auto">
+                        <!-- <div id="progressPlay" class="progress-bar rounded-pill" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    </div>
+                    <div class="theButton my-auto">
+                        <button id="buttonPlay" type="button" class="btn btn-primary rounded-pill">+</button>
+                    </div>
+                </div>
+                <div id="romance" class="d-flex">
+                    <div class="icon">
+                        <img src="icons/romance.png" alt="romance">
+                    </div>
+                    <div id="parentRomance" class="progress rounded-pill my-auto">
+                        <!-- <div id="progressRomance" class="progress-bar rounded-pill" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    </div>
+                    <div class="theButton my-auto">
+                        <button id="buttonRomance" type="button" class="btn btn-primary rounded-pill">+</button>
+                    </div>
+                </div>
+                <div id="sleep" class="d-flex">
+                    <div class="icon">
+                        <img src="icons/sleep.png" alt="sleep">
+                    </div>
+                    <div id="parentSleep" class="progress rounded-pill my-auto">
+                        <!-- <div id="progressSleep" class="progress-bar rounded-pill" style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    </div>
+                    <div class="theButton my-auto">
+                        <button id="buttonSleep" type="button" class="btn btn-primary rounded-pill">+</button>
+                    </div>
+                </div>
+                <div id="study" class="d-flex">
+                    <div class="icon">
+                        <img src="icons/book.png" alt="sleep">
+                    </div>
+                    <div id="parentStudy" class="progress rounded-pill my-auto">
+                        <!-- <div id="progressStudy" class="progress-bar rounded-pill" style="width: 0%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> -->
+                    </div>
+                    <div class="theButton my-auto">
+                        <button id="buttonStudy" type="button" class="btn btn-primary rounded-pill">+</button>
+                    </div>
+                </div>
+            </div>
+            <div id="profileSection" class="mx-2">
+                <div id="title">
+                    <h4 style="font-weight: bold;">Profile</h4>
+                </div>
+                <div id="img" class="mt-4">
+                    <img id="theUserAvatar" class="rounded-circle" src="images/userDefaultMan.png" alt="avatar">
+                </div>
+                <div id="text">
+                    <p id="userP">"Ahhhh-hhaaaaaa... What time is it?"</p>
+                </div>
+            </div>
+            <div id="statusSection" class="mx-2">
+                <div id="title">
+                    <h4 style="font-weight: bold;">Status</h4>
+                </div>
+                <div id="fullName">
+                    <p><b>Name</b>: ERIK GANS</p>
+                </div>
+                <div id="major">
+                    <p><b>Major</b>: INFORMATICS</p>
+                </div>
+                <div id="semester">
+                    <p><b>Semester</b>: 1</p>
+                    <div id="semesterBar" class="progress rounded-pill mx-auto mt-2 mb-3">
+                        <div id="semesterProgressBar" class="progress-bar rounded-pill" style="width: 12.5%;" role="progressbar" aria-valuenow="12.5" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div id="relationship">
+                    <p><b>Relationship</b>: SINGLE</p>
+                </div>
+                <div id="condition">
+                    <p><b>Condition</b>: HEALTHY</p>
+                </div>
+                <div id="money">
+                    <p><b>Money</b>: $100</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <footer id="footerBottom" class="d-flex flex-wrap justify-content-center align-items-center py-3 fixed-bottom opacity-25">
+            <div>
+              <span class="text-dark">© Wkwkwk Group 2022</span>
+            </div>
+        </footer>
+    </div>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    $('document').ready(function(){
+
+        // Avatar settings
+        let avatarReceive = localStorage.getItem('theAvatar');
+        let theUserAvatar = $('#theUserAvatar');
+
+        if(avatarReceive == 'images/userDefaultMan.png'){
+            theUserAvatar.attr('src', 'images/userNguap1.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/userDefaultMan.png');
+            }, 3000);   
+        }
+        else if(avatarReceive == 'images/userDefaultWoman.png'){
+            theUserAvatar.attr('src', 'images/userNguap2.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+            }, 3000);
+        }
+        else if(avatarReceive == 'images/user3.png'){
+            theUserAvatar.attr('src', 'images/userNguap3.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/user3.png');
+            }, 3000);
+        }
+        else if(avatarReceive == 'images/user4.png'){
+            theUserAvatar.attr('src', 'images/userNguap4.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/user4.png');
+            }, 3000);
+        }
+        else if(avatarReceive == 'images/user5.png'){
+            theUserAvatar.attr('src', 'images/userNguap5.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/user5.png');
+            }, 3000);
+        }
+        else if(avatarReceive == 'images/user6.png'){
+            theUserAvatar.attr('src', 'images/userNguap6.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/user6.png');
+            }, 3000);
+        }
+        else if(avatarReceive == 'images/user7.png'){
+            theUserAvatar.attr('src', 'images/userNguap7.png');
+            setTimeout(function(){
+                theUserAvatar.attr('src', 'images/user7.png');
+            }, 3000);
+        }
+
+        //Fullname & major settings
+        let fullNameReceive = localStorage.getItem('theFullName');
+        let majorReceive = localStorage.getItem('theMajor');
+        $('#fullName').html(`<p><b>Name</b>: ${fullNameReceive.toUpperCase()}</p>`);
+        if(majorReceive == 'Informatics'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 💻</p>`);
+        }
+        else if(majorReceive == 'Information System'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} ⌨️</p>`);
+        }
+        else if(majorReceive == 'Engineering Physics'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🧮</p>`);
+        }
+        else if(majorReceive == 'Electrical Engineering'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🔋</p>`);
+        }
+        else if(majorReceive == 'Computer Engineering'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🖥️</p>`);
+        }
+        else if(majorReceive == 'Communication Science'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 📢</p>`);
+        }
+        else if(majorReceive == 'Digital Journalism'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🎥</p>`);
+        }
+        else if(majorReceive == 'Management'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 📚</p>`);
+        }
+        else if(majorReceive == 'Accounting'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 💰</p>`);
+        }
+        else if(majorReceive == 'Visual Communication Design'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🖌️</p>`);
+        }
+        else if(majorReceive == 'Film & Animation'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🎬</p>`);
+        }
+        else if(majorReceive == 'Architecture'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} ✏️</p>`);
+        }
+        else if(majorReceive == 'Depatrment of Hotel Operations'){
+            $('#major').html(`<p><b>Major</b>: ${majorReceive.toUpperCase()} 🛎️</p>`);
+        }
+
+        // Navbar settings
+        let navbar = $('#navbar');
+        navbar.mouseenter(function(){
+            navbar.attr('class', 'navbar navbar-expand-lg fixed-top border-bottom opacity-100');
+        });
+        navbar.mouseleave(function(){
+            navbar.attr('class', 'navbar navbar-expand-lg fixed-top border-bottom opacity-50');
+        });
+
+        // Declare parent variables
+        let parentEat = $('#parentEat');
+        let parentPlay = $('#parentPlay');
+        let parentRomance = $('#parentRomance');
+        let parentSleep = $('#parentSleep');
+        let parentStudy = $('#parentStudy');
+
+        let userP = $('#userP');
+        let parentUserP = $('#text');
+
+        let countSemester = 2;
+        let semester = $('#semester');
+        let condition = $('#condition');
+        let pacar = 0;
+
+        // Declare the default lenght of the progress bars
+        let panjangEat = 50;
+        let panjangPlay = 50;
+        let panjangRomance = 0;
+        let panjangSleep = 50;
+        let panjangStudy = 0;
+        let newBarEat = $(`<div class="progress-bar rounded-pill" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+        parentEat.html(newBarEat);
+        let newBarPlay = $(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+        parentPlay.html(newBarPlay);
+        let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+        parentRomance.html(newBarRomance);
+        let newBarSleep = $(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+        parentSleep.html(newBarSleep);
+        let newBarStudy = $(`<div class="progress-bar rounded-pill" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+        parentStudy.html(newBarStudy);
+
+        // Time settings
+        let time;
+        let jam = 5;
+        let detik = 30;
+        let noStudy = 0;
+        let money = 100;
+        let namaPacar;
+
+        setInterval(waktu, 1000);
+
+        function waktu(){
+            let backgroundBody = $('#theBody');
+            detik += 1;
+            if(detik == 60){
+                detik = 0;
+                jam += 1;
+            }
+            if(jam == 24){
+                jam = 0;
+            }
+            
+            //Dropped out function
+            if(panjangStudy == 0){
+                noStudy += 1;
+                if(noStudy == 15){
+                    alert("You will be dropped out soon! So please do you homework!");   
+                }
+                if(noStudy == 25){
+                    alert("You just got dropped out! Sorry :)");
+                    window.location.href = 'theDroppedout.html';
+                }
+            }
+            money += 10;
+            $("#money").html(`<p><b>Money</b>: $${money}</p>`);
+            
+            hour = (jam < 10) ? "0" + jam : jam;
+            second = (detik < 10) ? "0" + detik : detik;
+            time = hour + " : " + second;
+            if(money <=- 100){
+                window.location.href = 'theBankrupt.html';
+            }
+            
+            // Greetings and background settings
+            if(hour >= 12 && hour <= 17){
+                let nameReceive = localStorage.getItem('theName');
+                let greeting = $('#greeting');
+                let greetingQuotes = $('#greetingQuotes');
+                greeting.html(`<h1 id="greetingText">Good Afternoon, ${nameReceive}!</h1>`);
+                greetingQuotes.html(`<h5>"Shine like the afternoon sun and let people inspired by you for all the great things you do."</h5>`);
+                backgroundBody.attr('style', 'background-image: url("images/backgroundNoon.png");');
+                $('#time').html(`<h3>${time}</h3>`);
+            }
+            else if(hour >= 18 && hour <= 20){
+                let nameReceive = localStorage.getItem('theName');
+                let greeting = $('#greeting');
+                let greetingQuotes = $('#greetingQuotes');
+                greeting.html(`<h1 id="greetingText">Good Evening, ${nameReceive}!</h1>`);
+                greetingQuotes.html(`<h5>"No matter how bad your day has been, the beauty of the setting sun will make everything serene."</h5>`);
+                backgroundBody.attr('style', 'background-image: url("images/backgroundSunsets.png");');
+                $('#time').html(`<h3>${time}</h3>`);
+            }
+            else if(hour >= 21 || hour <= 4){
+                let nameReceive = localStorage.getItem('theName');
+                let greeting = $('#greeting');
+                let greetingQuotes = $('#greetingQuotes');
+                greeting.html(`<h1 style="color: white" id="greetingText">Good Night, ${nameReceive}!</h1>`);
+                greetingQuotes.html(`<h5 style="color: white">"Today will soon be yesterday. Tomorrow is a new day. Begin it well and serenely."</h5>`);
+                backgroundBody.attr('style', 'background-image: url("images/backgroundNight.png");');
+                $('#time').html(`<h3 style="color: white">${time}</h3>`);
+            }
+            else if(hour >= 5 && hour <= 11){
+                let nameReceive = localStorage.getItem('theName');
+                let greeting = $('#greeting');
+                let greetingQuotes = $('#greetingQuotes');
+                greeting.html(`<h1 id="greetingText">Good Morning, ${nameReceive}!</h1>`);
+                greetingQuotes.html(`<h5>"When you start each day with a grateful heart, light illuminates from within."</h5>`);
+                backgroundBody.attr('style', 'background-image: url("images/backgroundSunrises.png");');
+                $('#time').html(`<h3>${time}</h3>`);
+            }
+        }
+
+        //Time settings for the progress bars
+        setInterval(kurangEat, 1000);
+        setInterval(kurangPlay, 1000);
+        setInterval(kurangRomance, 10000);
+        setInterval(kurangSleep, 1000);
+        setInterval(kurangStudy, 15000);
+
+        function kurangEat(){
+            let selisih = 0.15;
+            panjangEat -= selisih;
+            let parentEat = $('#parentEat');
+
+            if(panjangEat <= 0){ 
+                alert('You are dead! Bro... in the afterlife, there is no food.');
+                window.location.href = 'theDeath.html';
+            }
+            else if(panjangEat <= 24){
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);  
+                userP.html(`"Really hungry right now. Maybe I should start eating something."`);
+                condition.html(`<p><b>Condition</b>: HUNGRY</p>`);
+            }
+            else{
+                let newBarEat = $(`<div class="progress-bar rounded-pill" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+            }
+        }
+
+        function kurangPlay(){
+            let selisih = 0.25;
+            panjangPlay -= selisih;
+            let parentPlay = $('#parentPlay');
+
+            if(panjangPlay <= 0){
+                alert(`You are dead! Don't be too serious about college, buddy. You should have had some spare time to do whatever other than college stuff, ya know?`);
+                window.location.href = 'theDeath.html';
+            }
+            else if(panjangPlay <= 24){
+                let newBarPlay = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+                userP.html(`"Ughh, I've been really stressed out. Maybe play some games?"`);
+            }
+            else{
+                let newBarPlay = $(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+            }
+        }
+
+        function kurangRomance(){
+            if(pacar != 0){
+                let selisih = 5;
+                panjangRomance -= selisih;
+                let parentRomance = $('#parentRomance');
+                if(panjangRomance <= 0){
+                    selisih = -1;
+                    alert(`You have been dumped by your partner!`);
+                    panjangRomance = 0;
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                    parentRomance.html(newBarRomance);
+                    pacar = 0;
+                    $("#relationship").html(`<p><b>Relationship</b>: SINGLE</p>`);
+                }
+                else{
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                    parentRomance.html(newBarRomance);
+                }
+            }
+        }
+
+        function kurangSleep(){
+            let selisih = 0.25;
+            panjangSleep -= selisih;
+            let parentSleep = $('#parentSleep');
+
+            if(panjangSleep <= 0){ 
+                alert(`You are dead! You were clearly sleepy and you didn't sleep? Now you are sleeping... forever.`);
+                window.location.href = 'theDeath.html';
+            }
+            else if(panjangSleep <= 24){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                userP.html(`"I... gotta... sleep..."`);
+                condition.html(`<p><b>Condition</b>: SLEEPY</p>`);
+            }
+            else{
+                let newBarSleep = $(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+            }
+        }
+
+        function kurangStudy(){
+            let selisih = 0.5;
+            panjangStudy -= selisih;
+            let parentStudy = $('#parentStudy');
+
+            if(panjangStudy < 0){
+                selisih = -0.5;
+                panjangStudy -= selisih;
+                let newBarStudy = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+                userP.html(`"OH SHOOT, I HAVE LOTS OF HOMEWORK!!!"`);
+                condition.html(`<p><b>Condition</b>: REALLY LAZY</p>`);
+            }
+            else if(panjangStudy <= 24){
+                let newBarStudy = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+                userP.html(`"Wait, do I have any homework? I'm not sure."`);
+            }
+            else{
+                let newBarStudy = $(`<div class="progress-bar rounded-pill" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+            }
+        }
+
+        // Settings for all the button functions
+        let buttonEat = $('#buttonEat');
+        let buttonPlay = $('#buttonPlay');
+        let buttonRomance = $('#buttonRomance');
+        let buttonSleep = $('#buttonSleep');
+        let buttonStudy = $('#buttonStudy');
+
+        buttonEat.click(function(){
+            let selisih = 6;
+            let nambah = 3;
+            //money -= 10;
+            //detik += 30;
+            //panjangSleep -= selisih;
+
+            
+            if(detik >= 60){
+                detik -= 60;
+                jam += 1;
+            }
+            if(jam == 24){
+                jam = 0;
+            }
+            if(money <= 0){
+                alert(`You are running out of money! Please use your money wisely! Otherwise you will go bankrupt`);
+            }
+            // Avatar settings
+            if(theUserAvatar.attr('src') == ('images/userDefaultMan.png')){
+                theUserAvatar.attr('src', 'images/userEat1.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultMan.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/userDefaultWoman.png')){
+                theUserAvatar.attr('src', 'images/userEat2.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user3.png')){
+                theUserAvatar.attr('src', 'images/userEat3.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user3.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user4.png')){
+                theUserAvatar.attr('src', 'images/userEat4.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user4.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user5.png')){
+                theUserAvatar.attr('src', 'images/userEat5.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user5.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user6.png')){
+                theUserAvatar.attr('src', 'images/userEat6.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user6.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user7.png')){
+                theUserAvatar.attr('src', 'images/userEat7.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user7.png');
+                }, 2000);
+            }
+
+            panjangEat += selisih;
+            
+
+            let parentEat = $('#parentEat');
+            let parentPlay = $('#parentPlay');
+            if(panjangEat <= 98){
+                detik += 30;
+                if(detik >= 60){
+                    detik -= 60;
+                    jam += 1;
+                }
+                money -= 20;
+                panjangPlay -= nambah;
+                //panjangEat -= nambah2;
+
+            }
+            else if(panjangEat > 98){
+                panjangEat = 100;
+            }
+            if(panjangPlay <= 24){
+                let newBarPlay = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+                setTimeout(function(){
+                    parentPlay.html(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+            else if(panjangPlay <= 0){
+                alert(`You are dead! Don't be too serious about college, buddy. You should have had some spare time to do whatever other than college stuff, ya know?`);
+                window.location.href = 'theDeath.html';
+            }
+            else{
+                let newBarPlay = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+                setTimeout(function(){
+                    parentPlay.html(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+
+            if(panjangEat <= 24){
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                userP.html(`"Finally some delicious foods. Yummy!"`);
+            }
+            else if(panjangEat >= 100){
+                panjangEat = 100;
+                
+            }
+            else{
+                let newBarEat = $(`<div class="progress-bar rounded-pill" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                userP.html(`"Yum... Yum... Yum... Delicioso."`);
+                condition.html(`<p><b>Condition</b>: HEALTHY</p>`);   
+            }
+        });
+
+        buttonPlay.click(function(){
+            let selisih = 6;
+            let nambah = 3;
+            jam += 1;
+            if(jam >= 24){
+                jam -= 24;
+            }
+            // Avatar settings
+            if(theUserAvatar.attr('src') == ('images/userDefaultMan.png')){
+                theUserAvatar.attr('src', 'images/userPlay1.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultMan.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/userDefaultWoman.png')){
+                theUserAvatar.attr('src', 'images/userPlay2.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user3.png')){
+                theUserAvatar.attr('src', 'images/userPlay3.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user3.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user4.png')){
+                theUserAvatar.attr('src', 'images/userPlay4.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user4.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user5.png')){
+                theUserAvatar.attr('src', 'images/userPlay5.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user5.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user6.png')){
+                theUserAvatar.attr('src', 'images/userPlay6.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user6.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user7.png')){
+                theUserAvatar.attr('src', 'images/userPlay7.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user7.png');
+                }, 2000);
+            }
+
+            panjangPlay += selisih;
+            panjangSleep -= nambah;
+
+            let parentPlay = $('#parentPlay');
+            let parentSleep = $('#parentSleep');
+
+            if(panjangSleep <= 24){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                setTimeout(function(){
+                    parentSleep.html(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+            else if(panjangSleep <= 0){
+                alert(`You are dead! It is just stupid to not give a damn about your eyes. You were tired and you didn't take a nap or something? This is just funny.`);
+                window.location.href = 'theDeath.html';
+            }
+            else{
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                setTimeout(function(){
+                    parentSleep.html(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+            if(pacar != 0){
+                panjangRomance-=nambah;
+                let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill bg-warning" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentRomance.html(newBarRomance);
+                setTimeout(function(){
+                    parentRomance.html(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+                if(panjangRomance <= 0){
+                    alert(`You have been dumped by your partner!`);
+                    panjangRomance = 0;
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill bg-warning" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                    parentRomance.html(newBarRomance);
+                    pacar = 0;
+                    $("#relationship").html(`<p><b>Relationship</b>: SINGLE</p>`);
+                }
+            }
+
+            if(panjangPlay <= 24){
+                let newBarPlay = $(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+                userP.html(`"Ughh... let's try some new games."`);
+            }
+            else if(panjangPlay >= 100){
+                panjangPlay = 100;
+                let newBarPlay = $(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+            }
+            else{
+                let newBarPlay = $(`<div class="progress-bar rounded-pill" style="width: ${panjangPlay}%" role="progressbar" aria-valuenow="${panjangPlay}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentPlay.html(newBarPlay);
+                userP.html(`Right there, dude! Yes! We're definitely winning this round."`);
+                condition.html(`<p><b>Condition</b>: HEALTHY</p>`);
+            }
+        });
+
+        buttonRomance.click(function(){
+            let selisih = 5;
+            panjangRomance += selisih;
+            let parentRomance = $('#parentRomance');
+            
+            // Avatar settings
+            if(pacar != 0){
+                if(theUserAvatar.attr('src') == ('images/userDefaultMan.png')){
+                    theUserAvatar.attr('src', 'images/userLove1.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/userDefaultMan.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/userDefaultWoman.png')){
+                    theUserAvatar.attr('src', 'images/userLove2.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/user3.png')){
+                    theUserAvatar.attr('src', 'images/userLove3.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/user3.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/user4.png')){
+                    theUserAvatar.attr('src', 'images/userLove4.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/user4.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/user5.png')){
+                    theUserAvatar.attr('src', 'images/userLove5.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/user5.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/user6.png')){
+                    theUserAvatar.attr('src', 'images/userLove6.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/user6.png');
+                    }, 2000);
+                }
+                else if(theUserAvatar.attr('src') == ('images/user7.png')){
+                    theUserAvatar.attr('src', 'images/userLove7.png');
+                    setTimeout(function(){
+                        theUserAvatar.attr('src', 'images/user7.png');
+                    }, 2000);
+                }
+            }
+            if(pacar == 1){
+                if(panjangRomance <= 0){
+                    selisih = -5;
+                    panjangRomance -= selisih;
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                    parentRomance.html(newBarRomance);
+                }
+                else if(panjangRomance >= 100){
+                    panjangRomance = 100;
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                    parentRomance.html(newBarRomance);
+                    money -= 20;
+                    jam += 2;
+                    if(money <= 0){
+                        alert(`You are running out of money! Please use your money wisely! Otherwise you will go bankrupt`);
+                    }
+                    if(jam >= 24){
+                        jam -= 24;
+                    }
+                }
+                else{
+                    jam += 2;
+                    money -= 20;
+                    if(jam >= 24){
+                        jam -= 24;
+                    }
+                    if(money <= 0){
+                        alert(`You are running out of money! Please use your money wisely! Otherwise you will go bankrupt`);
+                    }
+                    let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                    parentRomance.html(newBarRomance);
+                    userP.html(`"I'm full of love"`);
+                    condition.html(`<p><b>Condition</b>: IN LOVE</p>`);
+                }
+            }else{
+                if(confirm('Do you want to be in a relationship?') == true){
+                    pacarBaru = window.prompt("Please input your partner's name! Make sure that you are ready to be in a relationship and to keep him/her forever. Don't let him/her down!");
+                    
+                    if(pacarBaru == null || pacarBaru == ""){
+                        alert('Please input the name correctly!');
+                    }
+                    else{
+                        pacar++;
+                        panjangRomance = 25;
+                        let newBarRomance = $(`<div id="progressRomance" class="progress-bar rounded-pill" style="width: ${panjangRomance}%" role="progressbar" aria-valuenow="${panjangRomance}" aria-valuemin="0" aria-valuemax="100"></div>`);
+                        parentRomance.html(newBarRomance);
+                        $("#relationship").html(`<p><b>In relationship with</b>: ${pacarBaru.toUpperCase()}</p>`);
+                    }
+                }
+            }
+        });
+
+        buttonSleep.click(function(){
+            let selisih = 25;
+            let nambah2 = 15;
+
+            // Avatar settings
+            if(theUserAvatar.attr('src') == ('images/userDefaultMan.png')){
+                theUserAvatar.attr('src', 'images/userSleep1.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultMan.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/userDefaultWoman.png')){
+                theUserAvatar.attr('src', 'images/userSleep2.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user3.png')){
+                theUserAvatar.attr('src', 'images/userSleep3.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user3.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user4.png')){
+                theUserAvatar.attr('src', 'images/userSleep4.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user4.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user5.png')){
+                theUserAvatar.attr('src', 'images/userSleep5.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user5.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user6.png')){
+                theUserAvatar.attr('src', 'images/userSleep6.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user6.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user7.png')){
+                theUserAvatar.attr('src', 'images/userSleep7.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user7.png');
+                }, 2000);
+            }
+
+            panjangSleep += selisih;
+
+            if(panjangSleep <= 100){
+                jam += 4;
+                if(jam >= 24){
+                    jam -= 24;
+                }
+                panjangEat -= nambah2;
+
+            }
+            else if(panjangSleep > 100){
+                panjangSleep = 100;
+            }
+
+            let parentSleep = $('#parentSleep');
+            let parentEat = $('#parentEat');
+
+            if(panjangEat <= 24){
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                setTimeout(function(){
+                    let newBarEat = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                    parentEat.html(newBarEat);
+                }, 1000);
+            }
+            else if(panjangEat <= 0){
+                alert(`You are dead! Bro, you coulda grabbed some foods. You died hilariously (Anda mati konyol)`);
+                window.location.href = 'theDeath.html';
+            }
+            else{
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                setTimeout(function(){
+                    let newBarEat = $(`<div class="progress-bar rounded-pill" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                    parentEat.html(newBarEat);
+                }, 1000);  
+            }
+
+            if(panjangSleep <= 24){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);    
+                userP.html(`ZZZ... ZZZ... ZZZ`);
+            }
+            else if(panjangSleep >= 100){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+            }
+            else{
+                let newBarSleep = $(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                userP.html(`Zzz... Zzz... Zzz...`);
+                condition.html(`<p><b>Condition</b>: HEALTHY</p>`);
+            }
+        });
+
+        let semesterProgress = $("semesterBar");
+        let panjangSemester = 12.5;
+
+        buttonStudy.click(function(){
+            let selisih = 6;
+            let nambah = 1.5;
+            let nambah2 = 2.5;
+            jam += 1;
+            if(jam >= 24){
+                jam -= 24;
+            }
+            // Avatar settings
+            if(theUserAvatar.attr('src') == ('images/userDefaultMan.png')){
+                theUserAvatar.attr('src', 'images/userStudy1.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultMan.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/userDefaultWoman.png')){
+                theUserAvatar.attr('src', 'images/userStudy2.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/userDefaultWoman.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user3.png')){
+                theUserAvatar.attr('src', 'images/userStudy3.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user3.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user4.png')){
+                theUserAvatar.attr('src', 'images/userStudy4.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user4.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user5.png')){
+                theUserAvatar.attr('src', 'images/userStudy5.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user5.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user6.png')){
+                theUserAvatar.attr('src', 'images/userStudy6.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user6.png');
+                }, 2000);
+            }
+            else if(theUserAvatar.attr('src') == ('images/user7.png')){
+                theUserAvatar.attr('src', 'images/userStudy7.png');
+                setTimeout(function(){
+                    theUserAvatar.attr('src', 'images/user7.png');
+                }, 2000);
+            }
+
+            panjangStudy += selisih;
+            panjangEat -= nambah;
+            panjangSleep -= nambah2;
+
+            let parentStudy = $('#parentStudy');
+            let parentEat = $('#parentEat');
+
+            noStudy = 0;
+            if(panjangSleep <= 24){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                setTimeout(function(){
+                    parentSleep.html(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);    
+            }
+            else if(panjangSleep >= 100){
+                let newBarSleep = $(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+            }
+            else{
+                let newBarSleep = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentSleep.html(newBarSleep);
+                setTimeout(function(){
+                    parentSleep.html(`<div class="progress-bar rounded-pill" style="width: ${panjangSleep}%" role="progressbar" aria-valuenow="${panjangSleep}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+            if(panjangEat <= 24){
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                setTimeout(function(){
+                    parentEat.html(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+            else if(panjangEat <= 0){
+                alert(`Congratulations!!! We can't believe you've put lots of efforts in this simulation`);
+                window.location.href = 'graduation.html';
+            }
+            else{
+                let newBarEat = $(`<div class="progress-bar rounded-pill bg-warning" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentEat.html(newBarEat);
+                setTimeout(function(){
+                    parentEat.html(`<div class="progress-bar rounded-pill" style="width: ${panjangEat}%" role="progressbar" aria-valuenow="${panjangEat}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                }, 1000);
+            }
+
+            if(panjangStudy <= 24){
+                let newBarStudy = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+                userP.html(`"That homework isn't going to finish itself!"`);
+            }
+            else if(panjangStudy >= 100){
+                money -= 120;
+                semester.html(`<p><b>Semester</b>: ${countSemester++}</p>`);
+                panjangStudy = 0;
+                panjangSemester += 12.5;
+                semester.append(`<div id="semesterBar" class="progress rounded-pill mx-auto mt-2 mb-3"><div id="semesterProgressBar" class="progress-bar rounded-pill" style="width: ${panjangSemester}%;" role="progressbar" aria-valuenow="${panjangSemester}" aria-valuemin="0" aria-valuemax="100"></div></div>`);
+                
+                let newBarStudy = $(`<div class="progress-bar rounded-pill bg-danger" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+                if(money <= 0){
+                    alert(`You are running out of money! Please use your money wisely! Otherwise you will go bankrupt`);
+                }
+             
+                if(countSemester >= 10){
+                    alert(`Congratulations!!! We can't believe you've put lots of efforts in this simulation`);
+                    window.location.href = 'graduation.html';
+                }
+            }
+            else{
+                let newBarStudy = $(`<div class="progress-bar rounded-pill" style="width: ${panjangStudy}%" role="progressbar" aria-valuenow="${panjangStudy}" aria-valuemin="0" aria-valuemax="100"</div>`);
+                parentStudy.html(newBarStudy);
+                userP.html(`Wow, this is actually very easy to learn.`);
+                condition.html(`<p><b>Condition</b>: HEALTHY</p>`);
+            }
+        });
+    });
+</script>
+</body>
+</html>
